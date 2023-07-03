@@ -2,8 +2,11 @@
 
 AWS_CLI_LOG=~/aws-cli.log
 # Stop instances
-30 19 * * 1-5 ~/ec2-start-stop.sh stop-instances >> $AWS_CLI_LOG 2>&1
+30 19 * * 1-5 ~/ec2cmd.sh stop-instances >> $AWS_CLI_LOG 2>&1
 # Start Instances
-30 8 * * 1-5 ~/ec2-start-stop.sh start-instances >> $AWS_CLI_LOG 2>&1
+30 8 * * 1-5 ~/ec2cmd.sh start-instances >> $AWS_CLI_LOG 2>&1
 # Associa ElasticIP to instances
-35 8 * * 1-5 ~/ec2-start-stop.sh associate-eip >> $AWS_CLI_LOG 2>&1
+35 8 * * 1-5 ~/ec2cmd.sh associate-eip >> $AWS_CLI_LOG 2>&1
+
+# 30 6 * * 1-6   ~/w/rd/ec2-start-stop/ec2cmd.sh start-instances >> $AWS_CLI_LOG 2>&1
+# 30 18 * * *    ~/w/rd/ec2-start-stop/ec2cmd.sh stop-instances >> $AWS_CLI_LOG 2>&1
